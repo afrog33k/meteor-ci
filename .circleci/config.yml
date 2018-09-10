@@ -44,31 +44,31 @@ jobs:
             name: install Chimp & other building tools
             command: |
                 sudo npm install -g chimp
-                meteor npm install --save bcrypt
+                sudo meteor npm install --save bcrypt
       - run:
           name: check versions
           command: |
             echo "Meteor version:"
             # this forces Meteor to download whatever release your project is using
-            meteor --version
-            which meteor
+            sudo meteor --version
+            sudo which meteor
             echo "Meteor node version:"
-            meteor node -v
+            sudo meteor node -v
             echo "Meteor npm version:"
-            meteor npm -v
-            echo "Java version:"
-            java -version
+            sudo meteor npm -v
+            # echo "Java version:"
+            # sudo java -version
       - run: 
           name: install npm packages
-          command: meteor npm i
+          command: sudo meteor npm i
       - run:
           name: code linting
           command: |
-            meteor npm run lint --silent
+            sudo meteor npm run lint --silent
       - run:
           name: unit tests
           command: |
-            meteor test --once --driver-package dispatch:mocha-phantomjs
+            sudo meteor test --once --driver-package dispatch:mocha-phantomjs
       # - run:
       #     name: start app and run e2e tests
       #     command: meteor npm run test:e2e-standalone
@@ -95,6 +95,10 @@ jobs:
           paths:
             - ./node_modules/
             - ~/.npm/
+      - run:
+        name: deploy to galaxy ...
+        command: |
+          meteor deploy
       - store_test_results:
           path: ./tests/coverage/unit-tests/
       - store_artifacts:
