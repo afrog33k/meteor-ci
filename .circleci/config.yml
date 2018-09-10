@@ -43,7 +43,7 @@ jobs:
       - run:
             name: install Chimp & other building tools
             command: |
-                npm install -g chimp
+                sudo npm install -g chimp
                 meteor npm install --save bcrypt
                 npm install
       - run:
