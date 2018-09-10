@@ -96,9 +96,9 @@ jobs:
             - ./node_modules/
             - ~/.npm/
       - run:
-        name: deploy to galaxy
-        command: |
-            meteor deploy
+          name: deploy to galaxy
+          command: |
+              meteor deploy
       - store_test_results:
           path: ./tests/coverage/unit-tests/
       - store_artifacts:
