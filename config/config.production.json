@@ -1,0 +1,14 @@
+{
+    "public": {
+      "siteName": "SomeWebsite",
+      "someConfigValue": "I'm from config.production.json",
+      "accounts": {
+        "emails": {
+          "fromAddress": "no-reply@example.com"
+        }
+      }
+    },
+    "private": {
+      "someApiSecret": "someProdKey"
+    }
+  }
