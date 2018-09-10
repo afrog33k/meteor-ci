@@ -45,7 +45,6 @@ jobs:
             command: |
                 sudo npm install -g chimp
                 meteor npm install --save bcrypt
-                npm install
       - run:
           name: check versions
           command: |
